@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD_Read</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+</head>
+<body>
+    <h1>CRUD_Read</h1>
+
+    <div class="all">
+    
+        <table>
+            <tr>
+                <th>Sl.No</th>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>Email</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+            {% for data in datas %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{data.Name}}</td>
+                <td>{{data.Age}}</td>
+                <td>{{data.Email}}</td>
+                <td>
+                    <a class="btn btn-success" href="updateData/{{data.id}}">Update</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" href="deleteData/{{data.id}}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+           
+        </table>
+        <br><br>
+        <a class="btn btn-success" href="/">Home</a>
+    </div>
+</body>
+</html>

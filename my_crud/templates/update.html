@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD_Update</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+</head>
+<body>
+    <h1>Crud_Update</h1>
+    <div class="all">
+        <form action="/updateData/{{data.id}}" method="POST" autocomplete="off">
+            {% csrf_token %}
+            <label for="name">NAME : </label>
+            <input type="text" value={{data.Name}} name="name"><br><br>
+
+            <label for="name">Age : </label>
+            <input type="number" value={{data.Age}} name="age"><br><br>
+
+            <label for="name">Email : </label>
+            <input type="email"  value={{data.Email}} name="email"><br><br>
+
+            <button type="submit">Update</button>
+
+        </form>
+</body>
+</html>
